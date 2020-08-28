@@ -1,3 +1,19 @@
 #content {
-  color: green;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+#search-form {
+  width: 90%;
+  margin: 2rem auto 0;
+  border: 1px solid green;
+  display: flex;
+  justify-content: center;
+}
+
+#submit {
+  border: none;
+  background: transparent;
 }
