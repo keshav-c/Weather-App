@@ -1,8 +1,21 @@
-const showResults = (data) => {
+const clearResults = () => {
   const resultsDiv = document.getElementById('search-results');
-  const formattedData = document.createElement('pre');
-  resultsDiv.appendChild(formattedData);
-  formattedData.textContent = JSON.stringify(data, undefined, 2);
+  resultsDiv.innerHTML = '';
+  return resultsDiv;
 };
 
-export default showResults;
+const showResults = (data) => {
+  const resultsDiv = clearResults();
+  const formattedData = document.createElement('pre');
+  formattedData.textContent = JSON.stringify(data, undefined, 2);
+  resultsDiv.appendChild(formattedData);
+};
+
+const showLoading = () => {
+  const resultsDiv = clearResults();
+  const message = document.createElement('p');
+  message.textContent = 'Loading...';
+  resultsDiv.appendChild(message);
+};
+
+export { showResults as default, showLoading };

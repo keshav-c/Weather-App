@@ -1,5 +1,5 @@
 import search from './action';
-import display from './display';
+import { showLoading } from './display';
 
 const searchForm = document.createElement('form');
 searchForm.id = 'search-form';
@@ -22,11 +22,11 @@ icon.className = 'fi-xnsuhl-search';
 submitButton.appendChild(icon);
 searchForm.appendChild(submitButton);
 
-searchForm.addEventListener('submit', async (event) => {
+searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const query = searchForm.elements.location.value;
-  const data = await search(query);
-  display(data);
+  setTimeout(search, 1500, query);
+  showLoading();
 });
 
 export default searchForm;
