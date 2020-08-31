@@ -11,6 +11,12 @@
   border: 1px solid green;
   display: flex;
   justify-content: center;
+  align-items: baseline;
+}
+
+#location-input {
+  margin-left: 0.75em;
+  margin-right: 0.75em;
 }
 
 #submit {
