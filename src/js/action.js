@@ -3,10 +3,8 @@ const search = async (query) => {
   const url = `http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${key}`;
   const response = await fetch(url, {
     mode: 'cors',
-    // credentials: 'same-origin',
   })
     .then(response => response.json());
-  console.log(response);
   return response;
 };
 
