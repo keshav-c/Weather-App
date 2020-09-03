@@ -1,0 +1,36 @@
+{
+  "weather": [
+    {
+      "main": "Clouds",
+      "description": "scattered clouds",
+      "icon": "03d"
+    }
+  ],
+  "main": {
+    "temp": 27.98,
+    "feels_like": 30.65,
+    "temp_min": 27,
+    "temp_max": 29.44,
+    "pressure": 1010,
+    "humidity": 74
+  },
+  "visibility": 6000,
+  "wind": {
+    "speed": 3.6,
+    "deg": 210
+  },
+  "clouds": {
+    "all": 40
+  },
+  "rain": {
+    "1h": 43,
+    "3h": 123
+  },
+  "snow": {
+    "1h": 10,
+    "3h": 57
+  },
+  "dt": 1599126797,
+  "timezone": 19800,
+  "name": "Bengaluru"
+}
