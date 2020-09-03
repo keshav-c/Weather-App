@@ -1,4 +1,5 @@
 import getDateString from './util';
+import toggle from './change_units';
 
 const clearResults = () => {
   const resultsDiv = document.getElementById('search-results');
@@ -84,14 +85,20 @@ const showResults = (data) => {
   if (data.visibility) {
     miscData.innerHTML += `
       <span class="label">Visibility</span>
-      <span class="val distance">${data.visibility} meters</span>
+      <div>
+        <span class="val distance">${data.visibility}</span>
+        <span class="unit-distance">meters</span>
+      <div>
     `;
   }
 
   if (data.wind) {
     miscData.innerHTML += `
       <span class="label">Wind Speed</span>
-      <span class="val speed">${data.wind.speed} meters&sol;sec</span>
+      <div>
+        <span class="val speed">${data.wind.speed}</span>
+        <span class="unit-speed">meters&sol;sec</span>
+      </div>
       <span class="label">Wind Direction</span>
       <span class="val">${data.wind.deg}&deg;</span>
     `;
@@ -128,6 +135,14 @@ const showResults = (data) => {
   jsonData.className = 'debug-info';
   jsonData.innerHTML = JSON.stringify(data, undefined, 2);
   results.appendChild(jsonData);
+
+  const form = document.getElementById('search-form');
+  const changeUnits = document.createElement('span');
+  changeUnits.id = 'change-units';
+  changeUnits.setAttribute('data-metric', true);
+  changeUnits.textContent = 'Imperial';
+  changeUnits.addEventListener('click', toggle);
+  form.appendChild(changeUnits);
 };
 
 export { showResults as default, showLoading };

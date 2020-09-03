@@ -24,6 +24,10 @@ searchForm.appendChild(submitButton);
 
 searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
+  const toggler = document.getElementById('change-units');
+  if (toggler) {
+    toggler.remove();
+  }
   const query = searchForm.elements.location.value;
   setTimeout(search, 300, query);
   showLoading();
