@@ -25,7 +25,7 @@ searchForm.appendChild(submitButton);
 searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const query = searchForm.elements.location.value;
-  setTimeout(search, 1500, query);
+  setTimeout(search, 300, query);
   showLoading();
 });
 
