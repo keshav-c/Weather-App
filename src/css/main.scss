@@ -86,11 +86,11 @@ body {
     filter: opacity(70%);
     padding: 5px;
     background-color: ivory;
-  
+
     img {
       filter: contrast(90%);
     }
-  
+
     figcaption {
       font-size: 0.8em;
       padding: 3px;
@@ -115,16 +115,13 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2rem;
-  // background-color: black;
-  
+
   .label {
-    // grid-column-start: 1;
     background-color: white;
     justify-self: end;
   }
-  
+
   .val {
-    // grid-column-start: 3;
     background-color: white;
     justify-self: start;
   }
