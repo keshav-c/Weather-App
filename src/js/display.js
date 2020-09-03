@@ -15,9 +15,9 @@ const showLoading = () => {
 
 const showResults = (data) => {
   const results = clearResults();
-  const tempDiv = document.createElement('div');
 
   const location = document.createElement('div');
+  location.className = 'location';
   location.innerHTML = `
     <span class="loc-name">${data.name}</span>
     <span class="report-time">${getDateString(data.dt, data.timezone)}</span>
@@ -31,6 +31,9 @@ const showResults = (data) => {
       <figcaption class="description">${data.weather[0].description}</figcaption>
     </figure>
   `;
+
+  const tempDiv = document.createElement('div');
+  tempDiv.className = 'temperature-section';
 
   const currentTemp = document.createElement('div');
   currentTemp.className = 'current-temp';
@@ -59,8 +62,11 @@ const showResults = (data) => {
   tempDiv.appendChild(tempRange);
 
   results.appendChild(location);
-  results.appendChild(weather);
-  results.appendChild(tempDiv);
+  const mainInfo = document.createElement('div');
+  mainInfo.className = 'main';
+  mainInfo.appendChild(weather);
+  mainInfo.appendChild(tempDiv);
+  results.appendChild(mainInfo);
 
   const pressure = document.createElement('div');
   pressure.innerHTML = `
