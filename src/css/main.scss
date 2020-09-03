@@ -65,21 +65,61 @@ body {
 */
 
 .main {
-  width: 100%;
+  width: 60%;
+  margin: 1rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 
   .current-temp {
     font-size: 2.5em;
     font-weight: 600;
   }
+
+  .weather-icon {
+    filter: opacity(70%);
+    padding: 5px;
+    background-color: ivory;
   
+    img {
+      filter: contrast(90%);
+    }
+  
+    figcaption {
+      font-size: 0.8em;
+      padding: 3px;
+      text-align: center;
+    }
+  }
+
   .feels-like,
   .temp-range {
     font-size: 1.25em;
     font-weight: 100;
+  }
+}
+
+/*
+    Data: Misc
+*/
+
+.misc-data {
+  width: 60%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  // background-color: black;
+  
+  .label {
+    // grid-column-start: 1;
+    background-color: white;
+    justify-self: end;
+  }
+  
+  .val {
+    // grid-column-start: 3;
+    background-color: white;
+    justify-self: start;
   }
 }

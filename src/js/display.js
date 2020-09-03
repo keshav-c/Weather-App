@@ -26,7 +26,7 @@ const showResults = (data) => {
   const weather = document.createElement('div');
   const weatherIconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   weather.innerHTML = `
-    <figure>
+    <figure class="weather-icon">
       <img src=${weatherIconURL} alt="Weather Icon">
       <figcaption class="description">${data.weather[0].description}</figcaption>
     </figure>
@@ -68,73 +68,61 @@ const showResults = (data) => {
   mainInfo.appendChild(tempDiv);
   results.appendChild(mainInfo);
 
-  const pressure = document.createElement('div');
-  pressure.innerHTML = `
-    <span class="pressure-label">Pressure</span>
-    <span class="pressure-val">${data.main.pressure}hPa</span>
-  `;
-  results.appendChild(pressure);
+  const miscData = document.createElement('div');
+  miscData.className = 'misc-data';
 
-  const humidity = document.createElement('div');
-  humidity.innerHTML = `
-    <span class="humidity-label">Humidity</span>
-    <span class="humidity-val">${data.main.humidity}&percnt;</span>
+  miscData.innerHTML += `
+    <span class="label">Pressure</span>
+    <span class="val">${data.main.pressure}hPa</span>
   `;
-  results.appendChild(humidity);
+
+  miscData.innerHTML += `
+    <span class="label">Humidity</span>
+    <span class="val">${data.main.humidity}&percnt;</span>
+  `;
 
   if (data.visibility) {
-    const visibility = document.createElement('div');
-    visibility.innerHTML = `
-      <span class="visibility-label">Visibility</span>
-      <span class="visibility-val distance">${data.visibility}</span>
-      <span class="unit-distance">meters</span>
+    miscData.innerHTML += `
+      <span class="label">Visibility</span>
+      <span class="val distance">${data.visibility} meters</span>
     `;
-    results.appendChild(visibility);
   }
 
   if (data.wind) {
-    const wind = document.createElement('div');
-    wind.innerHTML = `
-      <span class="wind-label">Wind Speed</span>
-      <span class="wind-val speed">${data.wind.speed}</span>
-      <span class="unit-speed">meters&sol;sec</span>
-      <span class="wind-label">In</span>
-      <span>${data.wind.deg}&deg;</span>
+    miscData.innerHTML += `
+      <span class="label">Wind Speed</span>
+      <span class="val speed">${data.wind.speed} meters&sol;sec</span>
+      <span class="label">Wind Direction</span>
+      <span class="val">${data.wind.deg}&deg;</span>
     `;
-    results.appendChild(wind);
   }
 
   if (data.clouds) {
-    const cloudiness = document.createElement('div');
-    cloudiness.innerHTML = `
-      <span class="cloudiness-label">Cloudiness</span>
-      <span class="cloudiness-val">${data.clouds.all}&percnt;</span>
+    miscData.innerHTML += `
+      <span class="label">Cloudiness</span>
+      <span class="val">${data.clouds.all}&percnt;</span>
     `;
-    results.appendChild(cloudiness);
   }
 
   if (data.rain) {
-    const rain = document.createElement('div');
-    rain.innerHTML = `
-      <span class="rain-label">Rain (last 1 hour)</span>
-      <span class="rain-val">${data.rain['1h']}mm</span>
-      <span class="rain-label">Rain (last 3 hours)</span>
-      <span class="rain-val">${data.rain['3h']}mm</span>
+    miscData.innerHTML += `
+      <span class="label">Rain (last 1 hour)</span>
+      <span class="val">${data.rain['1h']}mm</span>
+      <span class="label">Rain (last 3 hours)</span>
+      <span class="val">${data.rain['3h']}mm</span>
     `;
-    results.appendChild(rain);
   }
 
   if (data.snow) {
-    const snow = document.createElement('div');
-    snow.innerHTML = `
-      <span class="snow-label">Snow (last 1 hour)</span>
-      <span class="snow-val">${data.snow['1h']}mm</span>
-      <span class="snow-label">Snow (last 3 hours)</span>
-      <span class="snow-val">${data.snow['3h']}mm</span>
+    miscData.innerHTML += `
+      <span class="label">Snow (last 1 hour)</span>
+      <span class="val">${data.snow['1h']}mm</span>
+      <span class="label">Snow (last 3 hours)</span>
+      <span class="val">${data.snow['3h']}mm</span>
     `;
-    results.appendChild(snow);
   }
 
+  results.appendChild(miscData);
 
   const jsonData = document.createElement('pre');
   jsonData.className = 'debug-info';
