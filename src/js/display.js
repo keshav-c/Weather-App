@@ -62,6 +62,20 @@ const showResults = (data) => {
   results.appendChild(weather);
   results.appendChild(tempDiv);
 
+  const pressure = document.createElement('div');
+  pressure.innerHTML = `
+    <span class="pressure-label">Pressure</span>
+    <span class="pressure-val">${data.main.pressure}hPa</span>
+  `;
+  results.appendChild(pressure);
+
+  const humidity = document.createElement('div');
+  humidity.innerHTML = `
+    <span class="humidity-label">Humidity</span>
+    <span class="humidity-val">${data.main.humidity}&percnt;</span>
+  `;
+  results.appendChild(humidity);
+
   if (data.visibility) {
     const visibility = document.createElement('div');
     visibility.innerHTML = `
