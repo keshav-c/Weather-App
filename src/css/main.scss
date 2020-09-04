@@ -1,12 +1,15 @@
 body {
   font-family: 'Raleway', sans-serif;
+  height: 100vh;
+  // background-image: url('../images/daniel-ramirez-q4TfWtnz_xw-unsplash.jpg');
+  background-size: cover;
+  // color: blanchedalmond;
 }
 
 #content {
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 /*
@@ -16,7 +19,6 @@ body {
 #search-form {
   width: 90%;
   margin: 2rem auto 0;
-  border: 1px solid green;
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -117,12 +119,10 @@ body {
   column-gap: 2rem;
 
   .label {
-    background-color: white;
     justify-self: end;
   }
 
   .val {
-    background-color: white;
     justify-self: start;
   }
 }

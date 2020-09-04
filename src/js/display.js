@@ -143,6 +143,14 @@ const showResults = (data) => {
   changeUnits.textContent = 'Imperial';
   changeUnits.addEventListener('click', toggle);
   form.appendChild(changeUnits);
+
+  const unspKey = 'Jk7uiL9KRyqgPk97RK04K5eWuqInFYFma8sJCKXeMxc';
+  const bgURL = `https://api.unsplash.com/photos/random?client_id=${unspKey}&query=${data.weather[0].main}`;
+  fetch(bgURL, { mode: 'cors' })
+    .then(response => response.json())
+    .then(data => {
+      document.body.style.backgroundImage = `url(${data.urls.regular})`;
+    });
 };
 
 export { showResults as default, showLoading };
