@@ -18,7 +18,7 @@ This application demonstrates the process of consuming an API and presenting the
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://deploy-preview-1--festive-pasteur-77b125.netlify.app/)
 
 
 ## Getting Started
