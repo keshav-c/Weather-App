@@ -1,18 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Weather App
 
-> One paragraph statement about the project.
+![Demo Gif](docs/demo.gif)
 
-![screenshot](./app_screenshot.png)
+> A client side, JavaScript app that queries the OpenWeatherMap API for the current weather conditions in a given location. 
 
-Additional description about the project and its features.
+![screenshot](docs/screenshot.png)
+
+This application demonstrates the process of consuming an API and presenting the information received in a clean interface.
 
 ## Built With
 
-- Major languages,
-- frameworks,
-- technologies used
+- HTML, CSS and JavaScript
+- OpenWeatherMap API
+- Unsplash API
 
 ## Live Demo
 
@@ -21,29 +23,20 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
+- Clone this repository. 
+- Switch to the `weather-app` branch. 
+- Install all dependancies by running `npm install`.
+- Launch the project locally by running `npm run start`.
 
 ### Usage
 
-### Run tests
-
-### Deployment
-
+- Enter the name of the location in the search bar.
+- Click on the _metric_ button next to the search bar, that says `Imperial` (to switch to Imperial units) or `Metric` (to switch to metric units).
 
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Keshav Chakravarthy**
 
 - Github: [@keshav-c](https://github.com/keshav-c)
 - Linkedin: [k3shavchakravarthy](https://www.linkedin.com/in/k3shavchakravarthy/)
@@ -52,7 +45,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/keshav-c/Weather-App/issues).
 
 ## Show your support
 
@@ -60,10 +53,10 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse for reviewing the code
+- The Odin Project for the assignment details
+- OpenWeatherMap and Unsplash for great, easy to use APIs.
 
 ## 📝 License
 
-This project is [MIT](lic.url) licensed.
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
