@@ -25,7 +25,7 @@ const showResults = (data) => {
   `;
 
   const weather = document.createElement('div');
-  const weatherIconURL = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  const weatherIconURL = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
   weather.innerHTML = `
     <figure class="weather-icon">
       <img src=${weatherIconURL} alt="Weather Icon">
