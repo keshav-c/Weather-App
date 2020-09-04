@@ -145,7 +145,8 @@ const showResults = (data) => {
   form.appendChild(changeUnits);
 
   const unspKey = 'Jk7uiL9KRyqgPk97RK04K5eWuqInFYFma8sJCKXeMxc';
-  const bgURL = `https://api.unsplash.com/photos/random?client_id=${unspKey}&query=${data.weather[0].main}`;
+  const factor = ` ${data.name} ${data.weather[0].description}`;
+  const bgURL = `https://api.unsplash.com/photos/random?client_id=${unspKey}&query=${factor}`;
   fetch(bgURL, { mode: 'cors' })
     .then(response => response.json())
     .then(data => {
